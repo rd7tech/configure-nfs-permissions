@@ -44,14 +44,8 @@ After creating the access and accounting folders, I edited the permissions of ea
 <br />
 
 <p>
-After setting up the permissions on each folder I attempted to access the folders as a Client who is a part of the Domain Users group on the Client VM. As shown below, they are unable to access to folder only available to Domain Admins. They are able to access the "read-access" and "write-access" folders, since they have permissions to do so as a part of the Domain Users group.
+After setting up the permissions on each folder I attempted to access the folders as a Client who is a part of the Domain Users group on the Client VM. They are able to access the "read-access" and "write-access" folders, since they have permissions to do so as a part of the Domain Users group. However, they are unable to access the "no-access" folder as it is only available to the Domain Admins.
 </p>
-
-
-<p>
-After checking their access, I created a Security Group named "ACCOUNTANTS" in the Active Directory. Next, I edited the accountants folder to give the ACCOUNTANTS group read/write permissions. 
-</p>
-
 
 ![(7) Attempt to access newly created files as a Client](https://github.com/user-attachments/assets/dc532c54-cb19-457a-b3f9-e38111ca7ffa)
 ![(9) showing access to read access folder as client](https://github.com/user-attachments/assets/7030d7c3-e2b8-4ec1-b326-8fc4fc5306e0)
@@ -60,7 +54,9 @@ After checking their access, I created a Security Group named "ACCOUNTANTS" in t
 
 <br />
 
-
+<p>
+After checking their access, I created a Security Group named "ACCOUNTANTS" in the Active Directory. Next, I edited the accountants folder to give the ACCOUNTANTS group read/write permissions. 
+</p>
 
 ![(11) creating new security group ACCOUNTANTS on DC VM](https://github.com/user-attachments/assets/c19802a8-2408-48be-a32e-3b7df286c0ad)
 ![(12) giving accounting folder read write permissions to new ACCOUNTANTS group](https://github.com/user-attachments/assets/ff6dc53a-978a-42b2-810e-9a47e1ba3b4d)
