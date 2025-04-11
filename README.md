@@ -22,29 +22,30 @@ This exercise outlines the implementation of NFS and Permissions within Azure Vi
 
 <h2>Deployment and Configuration Steps</h2>
 <p>
-First, I reset one of the Users passwords in order to log in to our Client Virtual machine with their account. Next, I will be creating read-access, write-access, no-access, and accounting folders on the C:\ drive of our Domain Controller VM.
+First, I reset one of the Users passwords in order to log in to our Client Virtual machine with their account.
 </p>
 
 ![(1) Using DC VM to reset user password to log into client VM](https://github.com/user-attachments/assets/237918a3-3b99-41a2-8efe-9baee23ca107)
 
-
 <br />
+<p> Next, I will be creating read-access, write-access, no-access, and accounting folders on the C:\ drive of our Domain Controller VM.</p>
+
+
+![(2) Create access and accounting folders on the C drive on DC VM](https://github.com/user-attachments/assets/43620b88-f90f-49aa-a35a-ac36da2f66e5)
+
 <p>
 After creating the access and accounting folders, I edited the permissions of each folder and assigned them to Groups created in the Active Directory. The "Domain Users" group were given permissions to only the "read-access" and "write-access" folders. The "Domain Admins" group was given permissions to the "no-access" folder.
 </p>
 
-![(2) Create access and accounting folders on the C drive on DC VM](https://github.com/user-attachments/assets/43620b88-f90f-49aa-a35a-ac36da2f66e5)
-
+![(3) give read permissions to Domain users](https://github.com/user-attachments/assets/476e51b9-1778-4679-a487-765659100181)
+![(5) give read and write permissions to domain users](https://github.com/user-attachments/assets/b6bbdc67-ff0b-464d-b94a-c870fa51aa66)
+![(6) give read and write permissions to Domain Admins](https://github.com/user-attachments/assets/0d7d648e-0ecb-484c-ac3c-c8b6a7ac8002)
 
 <br />
 
 <p>
 After setting up the permissions on each folder I attempted to access the folders as a Client who is a part of the Domain Users group on the Client VM. As shown below, they are unable to access to folder only available to Domain Admins. They are able to access the "read-access" and "write-access" folders, since they have permissions to do so as a part of the Domain Users group.
 </p>
-
-![(3) give read permissions to Domain users](https://github.com/user-attachments/assets/476e51b9-1778-4679-a487-765659100181)
-![(5) give read and write permissions to domain users](https://github.com/user-attachments/assets/b6bbdc67-ff0b-464d-b94a-c870fa51aa66)
-![(6) give read and write permissions to Domain Admins](https://github.com/user-attachments/assets/0d7d648e-0ecb-484c-ac3c-c8b6a7ac8002)
 
 
 <p>
